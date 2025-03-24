@@ -1,7 +1,7 @@
-# prep Timeseries 2 (calculate offset directly from data)
+# Prep Biomass Timeseries Data
 
 library(tidyverse)
-InputPath <- "~/MME/MA/BOATS_repos/HPC_Runs/OutputFiles/outputFiles/"
+InputPath <- "YOUR_PATH/OutputFiles/outputFiles/" #Path to BOATS output data in csv files
 OutputPath <- "BOATSOutputEnsemble/summarisedFiles/"
 params <- c("ens1", "ens2", "ens3", "ens4", "ens5")
 whichMPA <- c("mpa1", "mpa2") # change as needed

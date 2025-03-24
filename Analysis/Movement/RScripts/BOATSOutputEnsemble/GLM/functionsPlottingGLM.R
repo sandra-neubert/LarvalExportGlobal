@@ -1,3 +1,5 @@
+#Functions to plot GLM outputs
+
 gg_add <- list(#scale_x_continuous(expand = c(0, 0)),
                #scale_y_continuous(expand = c(0, 0)),
                ggplot2::theme_bw(),

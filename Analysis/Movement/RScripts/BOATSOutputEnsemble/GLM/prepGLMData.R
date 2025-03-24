@@ -3,7 +3,6 @@
 library(tidyverse)
 library(units)
 
-Data_path <- "../Data"
 SpatialData <- "BOATSOutputEnsemble/FilesSpatial"
 LatLon <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 
@@ -17,7 +16,7 @@ H_NAs <- read_csv(file.path(SpatialData, "GLMDatEnsMean_y164.csv")) %>%
   dplyr::filter(mpa=="mpa1", reg == "oa") %>%
   dplyr::select("val")
 
-MoveInd <- read_csv(file.path(Data_path, "LarvExp", "MoveInd.csv"), 
+MoveInd <- read_csv(file.path(SpatialData, "MoveInd.csv"), 
                     col_names = c("lon", "lat", "moveInd"))%>%
   dplyr::mutate(lon = case_when(lon > 180 ~ lon -360,
                                 lon < 180 ~ lon)) %>%

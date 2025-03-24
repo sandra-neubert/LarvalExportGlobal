@@ -1,6 +1,8 @@
 # Time series plots 
 # Fig. 1
 
+#after running prepBOATSOutTimeseriesH and B
+
 library(tidyverse)
 library(patchwork)
 InputPath <- "BOATSOutputEnsemble/summarisedFiles/"
@@ -220,55 +222,4 @@ ggsave(
   filename = file.path(FigurePath, paste0("TimeseriesAll_offset.png")),
   width = 12, height = 15, dpi = 300
 )
-
-
-# timeseries_row1 <- ((gg_B_msy_mpa1 + 
-#                          ggplot2::ggtitle("Maximum Sustainable Yield (Economics-focused scenario)") + 
-#                          ggplot2::theme(
-#   legend.position = "none",
-#   axis.title.x = element_blank(),
-#   axis.text.x = element_blank()
-# ))
-# + (gg_B_oa_mpa1 + 
-#      ggplot2::ggtitle("Open-Access (Economics-focused scenario)") + 
-#      ggplot2::theme(
-#        legend.position = "none",
-#        axis.title.x = element_blank(),
-#        axis.text.x = element_blank()
-#      ))
-# + (gg_B_msy_mpa2 + 
-#      ggplot2::ggtitle("Maximum Sustainable Yield (Biodiversity-focused scenario)") + 
-#      ggplot2::theme(
-#        legend.position = "none",
-#        axis.title.x = element_blank(),
-#        axis.text.x = element_blank()
-#      ))
-# + (gg_B_oa_mpa2 + 
-#      ggplot2::ggtitle("Open-Access (Biodiversity-focused scenario)") + 
-#      ggplot2::theme(
-#        legend.position = "none",
-#        axis.title.x = element_blank(),
-#        axis.text.x = element_blank()
-#      )))  +
-#     plot_layout(ncol = 4) 
-#   
-#   
-#   
-# timeseries_row2 <-((gg_H_msy_mpa1) # replace with MSY harvest plots
-#      + (gg_H_oa_mpa1)#+ ggplot2::ggtitle("Maximum Sustainable Yield"))
-#      + (gg_H_msy_mpa2)
-#      + (gg_H_oa_mpa2)) +
-#   plot_layout(ncol = 4) 
-# 
-# timeseries_row3 <-((gg_HPC_msy_mpa1) # replace with MSY harvest plots
-#                    + (gg_HPC_oa_mpa1)#+ ggplot2::ggtitle("Maximum Sustainable Yield"))
-#                    + (gg_HPC_msy_mpa2)
-#                    + (gg_HPC_oa_mpa2)) +
-#   plot_layout(ncol = 4) 
-# 
-#    # plot_annotation(tag_levels = 'a')) #+ ggplot2::ggtitle("Maximum Sustainable Yield")))) # ) + plot_layout(guides = "collect") & theme(legend.position = 'bottom'))
-# 
-# timeseries_plots1 <- timeseries_row1 / timeseries_row2 #+ plot_layout(guides = "collect") & theme(legend.position = 'bottom')
-# 
-# timeseries_plots <- timeseries_plots1 / timeseries_row3 + plot_annotation(tag_levels = 'a')
 

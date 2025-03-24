@@ -56,9 +56,10 @@ DF <- 4
 m1 <- glm((val + 0.01)  ~ ns(moveInd, DF) + reg * ns(distance, DF) + 
              reg * ns(npp_ed, DF) + ns(temp, DF) + mpa,
            family = Gamma(link = "log"), GLMDataFilt)
-#par(mfrow = c(3,2))
-#plot(m1)
+
 summary(m1)
+
+# Plot GLM (Fig. 3)
 plotM1 <- gg_plotPreds(m1, 
                         dist = TRUE, dist_interact = TRUE, 
                         npp_ed = TRUE, npp_ed_interact = TRUE,
@@ -82,7 +83,7 @@ ggM1 <- (((plotM1[[1]] + gg_add + ggplot2::labs(x = "Distance to MPA (km)")) +
                )))) + 
   plot_annotation(tag_levels = "a",
                   title = paste0("R2 = ", round(with(summary(M1), 1 - deviance/null.deviance), 2))
-  ) #+ plot_layout(guides = "collect") & theme(legend.position = 'bottom')
+  ) 
 
 ggsave(plot = ggM1,
        filename = file.path(FigurePath, "GLM", paste0("ggM1.png")),

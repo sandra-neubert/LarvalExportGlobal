@@ -1,3 +1,6 @@
+# Time series plots 
+# Fig. 2
+
 library(tidyverse)
 library(sf)
 library(patchwork)
